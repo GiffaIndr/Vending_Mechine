@@ -1,0 +1,26 @@
+{
+    "P001": {
+        "nama_produk": "Air Mineral Botol",
+        "kategori": "Minuman",
+        "harga": 5000,
+        "stok": 10
+    },
+    "P002": {
+        "nama_produk": "Cokelat Bar",
+        "kategori": "Makanan",
+        "harga": 7500,
+        "stok": 8
+    },
+    "P003": {
+        "nama_produk": "Keripik Kentang",
+        "kategori": "Makanan",
+        "harga": 10000,
+        "stok": 5
+    },
+    "P004": {
+        "nama_produk": "Teh Botol",
+        "kategori": "Minuman",
+        "harga": 6000,
+        "stok": 0
+    }
+}
