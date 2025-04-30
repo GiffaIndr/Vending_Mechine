@@ -20,7 +20,13 @@
     "P004": {
         "nama_produk": "Teh Botol",
         "kategori": "Minuman",
-        "harga": 6000,
-        "stok": 0
+        "harga": 7000,
+        "stok": 10
+    },
+    "P006": {
+        "nama_produk": "SUSU",
+        "kategori": "Minuman",
+        "harga": 4000,
+        "stok": 12
     }
 }
