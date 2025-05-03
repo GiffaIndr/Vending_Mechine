@@ -21,6 +21,7 @@ def tampilkan_produk():
     print(f"{'ID':<6} {'Nama':<20} {'Harga':<10} {'Stok':<5}")
     for id_produk, detail in produk.items():
         print(f"{id_produk:<6} {detail['nama_produk']:<20} {detail['harga']:<10} {detail['stok']:<5}")
+    input("Klik Enter Untuk Melanjutkan...")
 
 # Menangani proses pembelian produk oleh user
 def beli_produk(user):
