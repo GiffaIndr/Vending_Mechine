@@ -1,0 +1,14 @@
+{
+    "GIFFA": {
+        "password": "GIFFA2005",
+        "role": "admin"
+    },
+    "gif": {
+        "password": "gif2",
+        "role": "user"
+    },
+    "gif3": {
+        "password": "gif3",
+        "role": "user"
+    }
+}
