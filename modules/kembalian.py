@@ -12,9 +12,11 @@ def save_uang_kembalian(data):
     with open(PATH_UANG, 'w') as f:
         json.dump(data, f, indent=4)  
 
-def hitung_kembalian(total_kembalian):
-    # Menghitung kombinasi pecahan uang untuk total kembalian yang diminta
-    uang = sorted(load_uang_kembalian().items(), reverse=True)  
+def hitung_kembalian(total_kembalian): 
+    uang = sorted(
+        ((int(nominal), stok) for nominal, stok in load_uang_kembalian().items()), 
+        reverse=True
+    )
     hasil = {}
     sisa = total_kembalian
     for nominal, stok in uang:
@@ -24,24 +26,25 @@ def hitung_kembalian(total_kembalian):
         if jumlah > 0:
             hasil[nominal] = jumlah
             sisa -= nominal * jumlah
-            
-    if sisa > 0:
-        return None  # Tidak cukup pecahan untuk kembalian
-    else:
-        return hasil  # Mengembalikan kombinasi pecahan yang sesuai
+    return hasil
+
 
 def proses_kembalian(total_kembalian):
-    # Proses pengurangan stok uang berdasarkan kembalian yang diberikan
-    uang = load_uang_kembalian()
+    uang_asli = load_uang_kembalian()
+    uang = {int(k): v for k, v in uang_asli.items()}  # ubah key ke int
+
     kombinasi = hitung_kembalian(total_kembalian)
     if not kombinasi:
         return None
-    
+
     for nominal, jumlah in kombinasi.items():
         uang[nominal] -= jumlah
-        
-    save_uang_kembalian(uang)
-    return kombinasi  # Mengembalikan pecahan yang berhasil digunakan
+
+    uang_str = {str(k): v for k, v in uang.items()}  # ubah key kembali ke str
+    save_uang_kembalian(uang_str)
+
+    return kombinasi
+
 
 def isi_uang_kembalian():
     # Admin mengisi ulang stok pecahan uang secara manual

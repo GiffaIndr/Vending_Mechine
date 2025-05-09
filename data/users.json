@@ -10,5 +10,13 @@
     "gif3": {
         "password": "gif3",
         "role": "user"
+    },
+    "k": {
+        "password": "000",
+        "role": "user"
+    },
+    "H": {
+        "password": "000",
+        "role": "user"
     }
 }

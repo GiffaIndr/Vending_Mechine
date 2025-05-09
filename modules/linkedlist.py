@@ -27,7 +27,10 @@ class LinkedList:
             print("=== RIWAYAT TRANSAKSI (Linked List) ===")
             while curr:
                 t = curr.data
-                print(f"ID: {t['id_transaksi']}, User: {t['user']}, Produk: {t['id_produk']}, Jumlah: {t['jumlah']}, Total: Rp{t['total_harga']}, Tanggal: {t['tanggal']}")
+                if isinstance(t, dict) and 'username' in t:
+                    print(f"User: {t.get('username')}, Produk: {t.get('id_produk')}, Nama Produk: {t.get('nama_produk')}, Jumlah: {t.get('jumlah')}, Total: Rp{t.get('total')}, Bayar: {t.get('bayar')}, Kembalian: {t.get('kembalian')}, Tanggal: {t.get('waktu')}")
+                else:
+                    print("Data transaksi tidak valid:", t)
                 curr = curr.next
 
     def load_from_file(self, filename):

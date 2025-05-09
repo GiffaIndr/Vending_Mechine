@@ -3,7 +3,7 @@
         "nama_produk": "Air Mineral Botol",
         "kategori": "Minuman",
         "harga": 5000,
-        "stok": 10
+        "stok": 8
     },
     "P002": {
         "nama_produk": "Cokelat Bar",
@@ -26,7 +26,7 @@
     "P006": {
         "nama_produk": "SUSU",
         "kategori": "Minuman",
-        "harga": 4000,
+        "harga": 7000,
         "stok": 12
     }
 }

@@ -72,7 +72,7 @@ def beli_produk(user):
     save_produk(produk)
 
     # Simpan transaksi
-    save_transaksi(user, id_produk, jumlah, total_harga, "tunai")
+    # save_transaksi(user, id_produk, jumlah, total_harga, "tunai")
 
     print("Pembelian berhasil. Kembalian Anda:")
     for pecahan, jumlah in kombinasi_kembalian.items():

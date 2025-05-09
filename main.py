@@ -5,6 +5,8 @@ from modules.admin import tambah_produk, hapus_produk, edit_produk, lihat_riwaya
 from modules.kembalian import isi_uang_kembalian, lihat_stok_pecahan
 from modules.transaksi_fungsi import transaksi_pembelian
 from modules.binary_search import binary_search_produk_by_harga
+from modules.tree import filter_by
+from modules.sort import quick_sort_produk
 
 # Inisialisasi antrean global untuk seluruh user
 global_antrean = Queue()
@@ -20,6 +22,8 @@ def menu_admin():
         print("5. Lihat Laporan Transaksi")
         print("6. Lihat Stok Pecahan")
         print("7. Isi Ulang Pecahan")
+        print("8. Filter Produk")
+        print("9. Urutkan Produk Berdasarkan Harga (termurah/termahal)")
         print("0. Logout")
         pilihan = input("Pilih menu: ")
 
@@ -37,6 +41,49 @@ def menu_admin():
             lihat_stok_pecahan()  
         elif pilihan == '7':
             isi_uang_kembalian()  
+        elif pilihan == '8':
+            try:
+                tree = filter_by
+                kategori = input("Filter kategori (kosongkan jika tidak): ")
+                harga_min = input("Harga minimum (kosongkan jika tidak): ")
+                harga_max = input("Harga maksimum (kosongkan jika tidak): ")
+
+                # Konversi input ke tipe yang sesuai
+                kategori = kategori if kategori else None
+                harga_min = int(harga_min) if harga_min else None
+                harga_max = int(harga_max) if harga_max else None
+                print()
+
+                hasil = tree.filter(kategori, harga_min, harga_max)
+                for p in hasil:
+                    print(f'{p["id"]} - {p["nama_produk"]} | {p["kategori"]} | Rp{p["harga"]}')
+
+                input("Enter untuk melanjutkan...")
+            except ValueError:
+                print("input tidak valid")
+        elif pilihan == '9':
+            try:
+                urutan = input("Urutkan produk berdasarkan harga (termurah/termahal): ").lower()
+                ascending = urutan == "termurah"
+
+                import json
+                with open("data/produk.json", "r") as f:
+                    data = json.load(f)
+
+                produk_list = []
+                for pid, p in data.items():
+                    p["id"] = pid
+                    produk_list.append(p)
+
+                hasil_sortir = quick_sort_produk(produk_list, ascending)
+
+                print("\n===== Produk Diurutkan =====")
+                for p in hasil_sortir:
+                    print(f'{p["id"]} - {p["nama_produk"]} | {p["kategori"]} | Rp{p["harga"]}')
+
+                input("Enter untuk melanjutkan...")
+            except ValueError:
+                print("input tidak valid")
         elif pilihan == '0':
             break  
         else:
