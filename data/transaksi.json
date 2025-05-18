@@ -8,5 +8,15 @@
         "bayar": 14000,
         "kembalian": 0,
         "waktu": "2025-04-30 06:12:45"
+    },
+    {
+        "username": "k",
+        "id_produk": "P001",
+        "nama_produk": "Air Mineral Botol",
+        "jumlah": 2,
+        "total": 10000,
+        "bayar": 20000,
+        "kembalian": 10000,
+        "waktu": "2025-05-09 09:21:53"
     }
 ]
