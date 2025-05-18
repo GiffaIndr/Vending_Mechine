@@ -29,8 +29,10 @@ class LinkedList:
                 t = curr.data
                 if isinstance(t, dict) and 'username' in t:
                     print(f"User: {t.get('username')}, Produk: {t.get('id_produk')}, Nama Produk: {t.get('nama_produk')}, Jumlah: {t.get('jumlah')}, Total: Rp{t.get('total')}, Bayar: {t.get('bayar')}, Kembalian: {t.get('kembalian')}, Tanggal: {t.get('waktu')}")
+                    input("Klik Enter Untuk Melanjutkan...")
                 else:
                     print("Data transaksi tidak valid:", t)
+                    input("Klik Enter Untuk Melanjutkan...")
                 curr = curr.next
 
     def load_from_file(self, filename):
@@ -43,3 +45,4 @@ class LinkedList:
                     self.append(item)
         except FileNotFoundError:
             print("File transaksi tidak ditemukan.")
+            input("Klik Enter Untuk Melanjutkan...")

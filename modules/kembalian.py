@@ -61,6 +61,7 @@ def isi_uang_kembalian():
             
     save_uang_kembalian(uang)
     print("Uang kembalian berhasil diperbarui.")
+    input("Klik Enter Untuk Melanjutkan...")
     
 def lihat_stok_pecahan():
     # Menampilkan stok uang kembalian yang tersedia
@@ -68,3 +69,4 @@ def lihat_stok_pecahan():
     print("\n=== STOK PECAHAN UANG ===")
     for pecahan in sorted(uang.keys(), reverse=True):  
         print(f"Pecahan Rp{pecahan}: {uang[pecahan]} lembar/koin")
+        input("Klik Enter Untuk Melanjutkan...")

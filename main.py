@@ -107,12 +107,14 @@ def menu_user(username):
              # Menambah user ke antrean
             global_antrean.enqueue(username) 
             print(f"{username} telah masuk ke antrean.")
+            input("Klik Enter Untuk Melanjutkan...")
         elif pilihan == '3':
             # Menampilkan antrean saat ini
             global_antrean.show()  
         elif pilihan == '4':
             if global_antrean.is_empty():
                 print("Tidak ada antrean saat ini.") 
+                input("Klik Enter Untuk Melanjutkan...")
             else:
                 # Proses pembelian user yang pertama
                 user = global_antrean.dequeue()  
@@ -125,16 +127,20 @@ def menu_user(username):
                 hasil = binary_search_produk_by_harga(harga)
                 if hasil:
                     print(f"Ditemukan: ID={hasil['id']}, Nama={hasil['nama']}, Harga={hasil['harga']}, Stok={hasil['stok']}")
+                    input("Klik Enter Untuk Melanjutkan...")
                 else:
                     print("Tidak ada produk dengan harga tersebut.")  
+                    input("Klik Enter Untuk Melanjutkan...")
             except ValueError:
                 # Menangani input yang tidak valid
                 print("Input tidak valid.")  
+                input("Klik Enter Untuk Melanjutkan...")
         elif pilihan == '0':
             # Logout dari menu user
             break  
         else:
             print("Pilihan tidak valid.") 
+            input("Klik Enter Untuk Melanjutkan...")
 
 # Fungsi utama yang menangani login dan memilih menu berdasarkan role
 def main():

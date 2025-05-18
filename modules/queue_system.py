@@ -58,6 +58,7 @@ class Queue:
     def show(self):
         current = self.front
         print("\nAntrean saat ini:")
+        input("Klik Enter Untuk Melanjutkan...")
         # Telusuri dan tampilkan setiap node dalam antrean
         while current:
             print(f"- {current.data}")
